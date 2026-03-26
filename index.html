@@ -1,111 +1,154 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Personal Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Data & Insight</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; line-height: 1.6; }
+    body { font-family: 'Pretendard', Arial, sans-serif; background:#0f172a; color:#e2e8f0; }
+
     header {
-      background: #111;
-      color: #fff;
-      padding: 20px;
+      padding: 80px 20px;
       text-align: center;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
     }
+    header h1 { font-size: 42px; margin-bottom: 10px; }
+    header p { opacity: 0.7; }
+
     nav {
-      display: flex;
-      justify-content: center;
-      background: #333;
+      display:flex; justify-content:center; gap:20px;
+      background:#020617; padding:15px;
+      position:sticky; top:0;
     }
-    nav a {
-      color: #fff;
-      padding: 14px 20px;
-      text-decoration: none;
-    }
-    nav a:hover { background: #555; }
-    .container { padding: 20px; }
-    .section { margin-bottom: 40px; }
-    .card {
-      background: #f4f4f4;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #111;
-      color: #fff;
+    nav a { color:#e2e8f0; text-decoration:none; font-size:14px; }
+
+    .container { padding: 40px 20px; max-width:1100px; margin:auto; }
+    .section { margin-bottom:80px; }
+    h2 { margin-bottom:20px; font-size:26px; }
+
+    .grid { display:grid; gap:20px; }
+    @media(min-width:768px){
+      .grid-2 { grid-template-columns: repeat(2,1fr); }
+      .grid-3 { grid-template-columns: repeat(3,1fr); }
     }
 
-    /* Responsive */
-    @media (min-width: 768px) {
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-      }
+    .card {
+      background:#1e293b;
+      padding:20px;
+      border-radius:16px;
+      transition:0.3s;
+    }
+    .card:hover { transform: translateY(-5px); }
+
+    .project-title { font-size:18px; margin-bottom:10px; }
+    .tag {
+      display:inline-block;
+      background:#334155;
+      padding:5px 10px;
+      border-radius:999px;
+      font-size:12px;
+      margin-right:5px;
+      margin-top:5px;
+    }
+
+    footer {
+      text-align:center;
+      padding:40px 20px;
+      background:#020617;
+      font-size:14px;
+      opacity:0.6;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>나를 소개합니다</h1>
-  <p>데이터, 경험, 그리고 나만의 흐름</p>
+  <h1>DATA • INSIGHT • FLOW</h1>
+  <p>패턴을 읽고, 의미를 구조화하는 사람</p>
 </header>
 
 <nav>
-  <a href="#about">소개</a>
-  <a href="#insight">분석</a>
-  <a href="#life">라이프</a>
-  <a href="#contact">연락</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
 </nav>
 
 <div class="container">
 
   <section id="about" class="section">
-    <h2>👤 About Me</h2>
+    <h2>👤 About</h2>
     <div class="card">
-      <p>1992년생, 분석적 사고와 경험 기반 판단을 선호하는 사용자.</p>
-      <p>정보를 정리하고 패턴을 찾는 것에 강점이 있음.</p>
+      <p>데이터와 경험을 기반으로 패턴을 분석하고 구조화하는 것을 좋아합니다.</p>
+      <p>단순 정보가 아닌 흐름과 맥락을 정리하는 데 강점이 있습니다.</p>
     </div>
   </section>
 
-  <section id="insight" class="section">
-    <h2>🧠 Insight</h2>
-    <div class="grid">
+  <section id="skills" class="section">
+    <h2>🧠 Skills</h2>
+    <div class="grid grid-3">
       <div class="card">
-        <h3>데이터 정리 능력</h3>
-        <p>대화, 일정, 키워드를 기반으로 구조화하는 능력이 뛰어남.</p>
+        <h3>Data Structuring</h3>
+        <p>비정형 데이터를 정리하고 의미있는 구조로 변환</p>
       </div>
       <div class="card">
-        <h3>패턴 인식</h3>
-        <p>반복되는 흐름 속에서 의미를 찾고 정리하는 스타일.</p>
+        <h3>Pattern Recognition</h3>
+        <p>반복되는 흐름 속에서 인사이트 도출</p>
+      </div>
+      <div class="card">
+        <h3>Insight Mapping</h3>
+        <p>정보를 시각적/논리적으로 연결하는 능력</p>
       </div>
     </div>
   </section>
 
-  <section id="life" class="section">
-    <h2>🌊 Life Style</h2>
-    <div class="card">
-      <p>여행, 특히 바다(오이도, 대부도)와 관련된 활동을 선호.</p>
-      <p>가리비 등 특정 테마 중심으로 경험을 쌓는 스타일.</p>
+  <section id="projects" class="section">
+    <h2>🚀 Projects</h2>
+    <div class="grid grid-2">
+
+      <div class="card">
+        <div class="project-title">카카오톡 대화 분석</div>
+        <p>대화 데이터를 날짜별, 키워드별로 정리하여 패턴을 도출</p>
+        <span class="tag">Data</span>
+        <span class="tag">Analysis</span>
+      </div>
+
+      <div class="card">
+        <div class="project-title">여행 패턴 정리</div>
+        <p>오이도, 대부도 등의 여행 데이터를 기반으로 행동 패턴 분석</p>
+        <span class="tag">Lifestyle</span>
+        <span class="tag">Pattern</span>
+      </div>
+
+      <div class="card">
+        <div class="project-title">테마 기반 경험 설계</div>
+        <p>가리비 등 특정 테마 중심으로 경험을 축적하고 구조화</p>
+        <span class="tag">Concept</span>
+      </div>
+
+      <div class="card">
+        <div class="project-title">개인 데이터 아카이브</div>
+        <p>개인 경험을 데이터화하여 지속적으로 축적하는 시스템 구축</p>
+        <span class="tag">System</span>
+      </div>
+
     </div>
   </section>
 
   <section id="contact" class="section">
     <h2>📬 Contact</h2>
     <div class="card">
-      <p>GitHub에 이 페이지를 업로드하여 포트폴리오로 활용 가능.</p>
+      <p>GitHub를 통해 프로젝트와 결과물을 공유합니다.</p>
+      <p>협업 및 문의 환영합니다.</p>
     </div>
   </section>
 
 </div>
 
 <footer>
-  <p>© 2026 My Personal Website</p>
+  <p>© 2026 Portfolio</p>
 </footer>
 
 </body>
